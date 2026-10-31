@@ -25,14 +25,22 @@ window.INVITATION = {
     heading: "THE CELEBRATION",
     name: "La Salle des Fêtes",
     // PLACEHOLDER — replace with the real address
-    address: "Salle Des Fêtes Gardenia",
+    address: "[ Venue address — to be added in js/config.js ]",
     // PLACEHOLDER — replace with the real Google Maps share link
     // (Google Maps > Share > Copy link). Until then it opens a generic search.
-    mapsUrl: "https://maps.app.goo.gl/oXCKmUm2yPqNZ6Aq7",
+    mapsUrl: "https://www.google.com/maps/search/?api=1&query=La+Salle+des+F%C3%AAtes",
     // OPTIONAL — paste the "src" of Google Maps > Share > Embed a map to show a live map
     // inside the frame. Leave empty to keep the illustrated map preview.
     mapEmbedUrl: "",
     buttonLabel: "Get Directions"
+  },
+
+  // Music. Replace the file in assets/audio/ (or change `src`) to use another track.
+  // The default is a synthesized arrangement of Pachelbel's Canon in D (public-domain composition).
+  music: {
+    src: "assets/audio/canon-in-d.mp3",
+    title: "Canon in D",
+    artist: "Pachelbel"
   },
 
   closing: {

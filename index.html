@@ -64,6 +64,7 @@
 
 <!-- ============ OPENING: ENVELOPE + WAX SEAL ============ -->
 <div class="opening" id="opening">
+  <div class="opening__bg" id="openingBg"></div>
   <svg class="sprig sprig--tl" aria-hidden="true"><use href="#sprig"/></svg>
   <svg class="sprig sprig--br" aria-hidden="true"><use href="#sprig"/></svg>
   <svg class="sprig sprig--tr" aria-hidden="true"><use href="#sprig"/></svg>
@@ -97,6 +98,8 @@
         <path d="M0 0H145L72.5 60Z" fill="url(#gLiner)"/>
       </svg>
     </div>
+
+    <div class="crumbs" id="crumbs" aria-hidden="true"></div>
 
     <button class="seal" id="seal" type="button" aria-label="Open the invitation">
       <img class="seal__full" src="assets/img/seal.png" alt="" width="640" height="789" decoding="async">
@@ -174,6 +177,31 @@
   </section>
 </main>
 
+<!-- Music player: spinning disc (your SVG) + controls. Never autoplays. -->
+<aside class="music" id="music" aria-label="Music player">
+  <div class="music__card">
+    <button class="music__disc" id="musicDisc" type="button" aria-label="Show music player" aria-expanded="false" aria-controls="musicControls">
+      <img src="assets/img/music-disc.svg" alt="" width="559" height="559" decoding="async">
+    </button>
+    <div class="music__controls" id="musicControls">
+      <p class="music__title"><span data-cfg="music.title">Canon in D</span> <small data-cfg="music.artist">Pachelbel</small></p>
+      <input class="music__seek" id="musicSeek" type="range" min="0" max="1000" value="0" step="1" aria-label="Playback position">
+      <div class="music__times"><span id="musicCur">0:00</span><span id="musicDur">0:00</span></div>
+      <div class="music__row">
+        <button class="music__play" id="musicPlay" type="button" aria-label="Play" aria-pressed="false">
+          <svg class="i-play" viewBox="0 0 24 24" aria-hidden="true"><path d="M8 5.5v13a1 1 0 0 0 1.5.86l10.5-6.5a1 1 0 0 0 0-1.72L9.5 4.64A1 1 0 0 0 8 5.5z" fill="currentColor"/></svg>
+          <svg class="i-pause" viewBox="0 0 24 24" aria-hidden="true"><rect x="6" y="5" width="4.2" height="14" rx="1" fill="currentColor"/><rect x="13.8" y="5" width="4.2" height="14" rx="1" fill="currentColor"/></svg>
+        </button>
+        <label class="music__vol">
+          <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M4 9.5v5h3.5l4.5 3.5v-12L7.5 9.5H4z" fill="currentColor"/><path d="M15.5 9a4 4 0 0 1 0 6M17.8 6.7a7.3 7.3 0 0 1 0 10.6" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/></svg>
+          <input id="musicVol" type="range" min="0" max="1" step="0.01" value="0.8" aria-label="Volume">
+        </label>
+      </div>
+      <p class="music__msg" id="musicMsg" hidden>Music file not found — add it to assets/audio/</p>
+    </div>
+  </div>
+</aside>
+
 <div class="petals" id="petals" aria-hidden="true"></div>
 
 <noscript><style>.opening{display:none}.main{visibility:visible!important;opacity:1!important}html{overflow:auto!important}</style></noscript>
@@ -183,5 +211,6 @@
 <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/ScrollTrigger.min.js"></script>
 <script src="https://cdn.jsdelivr.net/npm/lenis@1.1.13/dist/lenis.min.js"></script>
 <script src="js/main.js"></script>
+<script src="js/music.js"></script>
 </body>
 </html>

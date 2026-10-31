@@ -14,7 +14,13 @@ assets/img/
   garden.jpg          your floral garden photo (invitation background)
   seal.png            wax seal, recolored burgundy from your seal artwork
   seal-original.png   the same seal in its original olive color
+  music-disc.svg      your music-disc illustration (lightweight copy of the disc, same artwork)
   paper.svg           paper-grain texture
+assets/audio/
+  canon-in-d.mp3      the wedding song (see "Music" below)
+js/music.js           music player (play/pause, progress, volume)
+source/               your original SVG files, untouched (not used by the site)
 vercel.json           caching headers for Vercel
 package.json          optional local dev server (npm start)
 ```
+
