@@ -11,15 +11,15 @@ css/styles.css        design (colors & fonts are variables at the top)
 js/config.js          ← names, date, venue, address, map link, texts
 js/main.js            animations (opening sequence, hero, scroll)
 assets/img/
-  garden.jpg          your floral garden photo (invitation background)
+  garden.jpg          floral garden photo (invitation background)
   seal.png            wax seal, recolored burgundy from your seal artwork
   seal-original.png   the same seal in its original olive color
-  music-disc.svg      your music-disc illustration (lightweight copy of the disc, same artwork)
+  music-disc.svg      music-disc illustration (lightweight copy of the disc, same artwork)
   paper.svg           paper-grain texture
 assets/audio/
   canon-in-d.mp3      the wedding song (see "Music" below)
 js/music.js           music player (play/pause, progress, volume)
-source/               your original SVG files, untouched (not used by the site)
+source/               original SVG file
 vercel.json           caching headers for Vercel
 package.json          optional local dev server (npm start)
 ```
