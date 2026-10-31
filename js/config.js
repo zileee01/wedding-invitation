@@ -25,10 +25,10 @@ window.INVITATION = {
     heading: "THE CELEBRATION",
     name: "La Salle des Fêtes",
     // PLACEHOLDER — replace with the real address
-    address: "[ Venue address — to be added in js/config.js ]",
+    address: "Salle Des Fêtes Gardenia",
     // PLACEHOLDER — replace with the real Google Maps share link
     // (Google Maps > Share > Copy link). Until then it opens a generic search.
-    mapsUrl: "https://www.google.com/maps/search/?api=1&query=La+Salle+des+F%C3%AAtes",
+    mapsUrl: "https://maps.app.goo.gl/6shEngmGSy875Nuz7",
     // OPTIONAL — paste the "src" of Google Maps > Share > Embed a map to show a live map
     // inside the frame. Leave empty to keep the illustrated map preview.
     mapEmbedUrl: "",
