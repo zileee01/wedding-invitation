@@ -1,0 +1,187 @@
+<!DOCTYPE html>
+<html lang="en" class="is-locked">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+  <title>Samy &amp; Yasmine — 27 · 07 · 2027</title>
+  <meta name="description" content="You are invited to the wedding of Samy &amp; Yasmine — 27 July 2027.">
+  <meta name="theme-color" content="#f1e7d2">
+  <meta property="og:title" content="Samy &amp; Yasmine — 27 · 07 · 2027">
+  <meta property="og:description" content="You are invited to celebrate with us.">
+  <meta property="og:image" content="assets/img/garden.jpg">
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,500;1,400;1,500&family=Great+Vibes&family=Montserrat:wght@300;400&display=swap" rel="stylesheet">
+  <link rel="preload" as="image" href="assets/img/seal.png">
+  <link rel="preload" as="image" href="assets/img/garden.jpg">
+  <link rel="stylesheet" href="css/styles.css">
+</head>
+<body>
+
+<!-- Shared SVG definitions -->
+<svg width="0" height="0" style="position:absolute" aria-hidden="true" focusable="false">
+  <defs>
+    <linearGradient id="gFlap" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#f6ecd8"/><stop offset="1" stop-color="#e3d2b2"/></linearGradient>
+    <linearGradient id="gLiner" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#4a0d1a"/><stop offset="1" stop-color="#72192b"/></linearGradient>
+    <linearGradient id="gSideL" x1="0" y1="0" x2="1" y2="0"><stop offset="0" stop-color="#eadcc0"/><stop offset="1" stop-color="#f4e9d3"/></linearGradient>
+    <linearGradient id="gSideR" x1="1" y1="0" x2="0" y2="0"><stop offset="0" stop-color="#eadcc0"/><stop offset="1" stop-color="#f4e9d3"/></linearGradient>
+    <linearGradient id="gBottom" x1="0" y1="1" x2="0" y2="0"><stop offset="0" stop-color="#e6d6b8"/><stop offset="1" stop-color="#f6ecd8"/></linearGradient>
+
+    <symbol id="sprig" viewBox="0 0 120 220">
+      <g fill="none" stroke="#7d8b66" stroke-width="1.4" stroke-linecap="round">
+        <path d="M14 214C34 160 62 128 70 70S96 16 112 6"/>
+        <path d="M44 150C28 142 20 128 18 114"/>
+        <path d="M60 112C78 108 90 96 94 82"/>
+      </g>
+      <g fill="#8c9a74" opacity=".85">
+        <path d="M44 150c-14-4-24-16-26-34 14 2 25 14 26 34z"/>
+        <path d="M60 112c16 2 28-8 34-30-16 4-30 14-34 30z"/>
+        <path d="M70 70c-14-6-20-20-18-36 12 8 18 20 18 36z"/>
+        <path d="M82 40c12 0 22-8 26-24-14 4-24 12-26 24z"/>
+        <path d="M30 184c-12-6-16-18-14-32 10 6 15 18 14 32z"/>
+      </g>
+      <g>
+        <circle cx="112" cy="6" r="5" fill="#c58a8f"/><circle cx="98" cy="22" r="4" fill="#ecd3cf"/>
+        <circle cx="76" cy="52" r="3.4" fill="#c58a8f"/><circle cx="18" cy="112" r="3" fill="#ecd3cf"/>
+      </g>
+    </symbol>
+
+    <symbol id="flourish" viewBox="0 0 260 44">
+      <g fill="none" stroke="currentColor" stroke-width="1.1" stroke-linecap="round">
+        <path class="draw" d="M130 22C110 22 104 6 84 8S60 30 40 28 14 14 4 18"/>
+        <path class="draw" d="M130 22C150 22 156 6 176 8S200 30 220 28 246 14 256 18"/>
+        <path class="draw" d="M84 8c-2 10 6 16 14 14M176 8c2 10-6 16-14 14"/>
+      </g>
+      <g fill="currentColor">
+        <path d="M60 28c-8 2-14-2-16-8 8-2 14 2 16 8zM200 28c8 2 14-2 16-8-8-2-14 2-16 8z" opacity=".7"/>
+        <circle cx="130" cy="22" r="4"/><circle cx="130" cy="22" r="8" fill="none" stroke="currentColor" stroke-width=".8"/>
+        <circle cx="116" cy="22" r="1.6"/><circle cx="144" cy="22" r="1.6"/>
+      </g>
+    </symbol>
+  </defs>
+</svg>
+
+<!-- ============ OPENING: ENVELOPE + WAX SEAL ============ -->
+<div class="opening" id="opening">
+  <svg class="sprig sprig--tl" aria-hidden="true"><use href="#sprig"/></svg>
+  <svg class="sprig sprig--br" aria-hidden="true"><use href="#sprig"/></svg>
+  <svg class="sprig sprig--tr" aria-hidden="true"><use href="#sprig"/></svg>
+  <svg class="sprig sprig--bl" aria-hidden="true"><use href="#sprig"/></svg>
+
+  <p class="opening__above" data-cfg="opening.aboveEnvelope">A wedding invitation</p>
+
+  <div class="env" id="env">
+    <div class="env__shadow"></div>
+    <div class="env__back"></div>
+
+    <div class="letter" id="letter">
+      <div class="letter__photo"></div>
+      <div class="letter__copy">
+        <span class="letter__names"><span data-cfg="couple.first">Samy</span> &amp; <span data-cfg="couple.second">Yasmine</span></span>
+        <span class="letter__date" data-cfg="date.display">27 · 07 · 2027</span>
+      </div>
+    </div>
+
+    <svg class="env__pocket" viewBox="0 0 145 100" preserveAspectRatio="none" aria-hidden="true">
+      <path d="M0 0L72.5 56L0 100Z" fill="url(#gSideL)" stroke="rgba(110,70,45,.28)" stroke-width=".35"/>
+      <path d="M145 0L72.5 56L145 100Z" fill="url(#gSideR)" stroke="rgba(110,70,45,.28)" stroke-width=".35"/>
+      <path d="M0 100L72.5 56L145 100Z" fill="url(#gBottom)" stroke="rgba(110,70,45,.3)" stroke-width=".35"/>
+    </svg>
+
+    <div class="flap" id="flap">
+      <svg class="flap__face flap__face--out" viewBox="0 0 145 60" preserveAspectRatio="none" aria-hidden="true">
+        <path d="M0 0H145L72.5 60Z" fill="url(#gFlap)" stroke="rgba(110,70,45,.35)" stroke-width=".4"/>
+      </svg>
+      <svg class="flap__face flap__face--in" viewBox="0 0 145 60" preserveAspectRatio="none" aria-hidden="true">
+        <path d="M0 0H145L72.5 60Z" fill="url(#gLiner)"/>
+      </svg>
+    </div>
+
+    <button class="seal" id="seal" type="button" aria-label="Open the invitation">
+      <img class="seal__full" src="assets/img/seal.png" alt="" width="640" height="789" decoding="async">
+      <span class="seal__half seal__half--l"><img src="assets/img/seal.png" alt="" decoding="async"></span>
+      <span class="seal__half seal__half--r"><img src="assets/img/seal.png" alt="" decoding="async"></span>
+    </button>
+  </div>
+
+  <p class="opening__tap" id="tap" data-cfg="opening.tapLabel">Tap to Open</p>
+</div>
+
+<!-- ============ MAIN INVITATION ============ -->
+<main class="main" id="main">
+
+  <!-- Hero: floral garden -->
+  <section class="scene hero" id="hero">
+    <div class="scene__bg" data-parallax></div>
+    <div class="hero__glow"></div>
+    <div class="hero__content">
+      <p class="hero__intro" data-hero="intro" data-cfg="hero.intro">Together with their families</p>
+      <h1 class="names">
+        <span class="name name--a" data-hero="name" data-cfg="couple.first">Samy</span>
+        <span class="amp" data-hero="amp">&amp;</span>
+        <span class="name name--b" data-hero="name" data-cfg="couple.second">Yasmine</span>
+      </h1>
+      <p class="hero__announce" data-hero="announce" data-cfg="hero.announcement">ARE GETTING MARRIED</p>
+      <p class="hero__date" data-hero="date"><i class="rule"></i><span data-cfg="date.display">27 · 07 · 2027</span><i class="rule"></i></p>
+    </div>
+    <div class="hero__scroll" data-hero="scroll" aria-hidden="true"><span></span></div>
+  </section>
+
+  <!-- Venue -->
+  <section class="scene venue" id="venue">
+    <div class="scene__bg scene__bg--venue" data-parallax></div>
+    <div class="venue__card" data-reveal="card">
+      <div class="venue__inner">
+        <p class="venue__label" data-reveal data-cfg="venue.heading">THE CELEBRATION</p>
+        <h2 class="venue__name" data-reveal data-cfg="venue.name">La Salle des Fêtes</h2>
+        <p class="venue__address" id="address" data-reveal data-cfg="venue.address"></p>
+
+        <a class="map" id="mapLink" data-reveal data-map-link target="_blank" rel="noopener" aria-label="Open the venue location in Google Maps">
+          <svg class="map__art" viewBox="0 0 400 250" preserveAspectRatio="xMidYMid slice" aria-hidden="true">
+            <rect width="400" height="250" fill="#efe4cf"/>
+            <g fill="#e4d4b5"><rect x="18" y="20" width="96" height="62" rx="4"/><rect x="132" y="20" width="70" height="62" rx="4"/><rect x="290" y="16" width="92" height="70" rx="4"/><rect x="18" y="150" width="110" height="80" rx="4"/><rect x="300" y="160" width="82" height="70" rx="4"/></g>
+            <path d="M0 108C70 96 120 130 200 118S330 96 400 112" fill="none" stroke="#c9d3bd" stroke-width="22" stroke-linecap="round"/>
+            <ellipse cx="236" cy="190" rx="62" ry="32" fill="#cfd8c0" opacity=".8"/>
+            <g fill="none" stroke="#faf4e6" stroke-width="7" stroke-linecap="round"><path d="M0 92H400"/><path d="M122 0V250"/><path d="M276 0V250"/><path d="M0 146C120 150 180 140 400 150" stroke-width="5"/></g>
+            <g fill="none" stroke="#b99a5b" stroke-opacity=".5" stroke-width="1" stroke-dasharray="3 5"><path d="M0 92H400M122 0V250M276 0V250"/></g>
+            <g transform="translate(196 118)">
+              <ellipse class="map__pulse" cx="0" cy="22" rx="16" ry="6" fill="none" stroke="#6a1425" stroke-opacity=".5"/>
+              <path d="M0 24C-14 4-20-4-20-14a20 20 0 0 1 40 0c0 10-6 18-20 38z" fill="#6a1425"/>
+              <circle cy="-14" r="7" fill="#f6ecd8"/>
+            </g>
+            <g transform="translate(350 206)" fill="none" stroke="#6a1425" stroke-opacity=".55" stroke-width="1"><circle r="14"/><path d="M0-18V18M-18 0H18"/><path d="M0-14L4 0 0 14-4 0Z" fill="#6a1425" fill-opacity=".4"/></g>
+          </svg>
+          <span class="map__live" id="mapLive"></span>
+          <span class="map__frame"></span>
+        </a>
+
+        <a class="btn" data-reveal data-map-link target="_blank" rel="noopener"><span data-cfg="venue.buttonLabel">Get Directions</span></a>
+      </div>
+    </div>
+  </section>
+
+  <!-- Closing -->
+  <section class="scene closing" id="closing">
+    <div class="scene__bg scene__bg--closing" data-parallax></div>
+    <div class="closing__content">
+      <svg class="orn orn--top" viewBox="0 0 260 44" aria-hidden="true"><use href="#flourish"/></svg>
+      <p class="closing__msg" data-reveal data-cfg="closing.message"></p>
+      <p class="closing__love" data-reveal data-cfg="closing.signoff">With love,</p>
+      <p class="closing__names" data-reveal><span data-cfg="couple.first">Samy</span> &amp; <span data-cfg="couple.second">Yasmine</span></p>
+      <svg class="orn orn--bottom" viewBox="0 0 260 44" aria-hidden="true"><use href="#flourish"/></svg>
+    </div>
+  </section>
+</main>
+
+<div class="petals" id="petals" aria-hidden="true"></div>
+
+<noscript><style>.opening{display:none}.main{visibility:visible!important;opacity:1!important}html{overflow:auto!important}</style></noscript>
+
+<script src="js/config.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/ScrollTrigger.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/lenis@1.1.13/dist/lenis.min.js"></script>
+<script src="js/main.js"></script>
+</body>
+</html>

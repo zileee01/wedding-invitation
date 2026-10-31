@@ -1,0 +1,186 @@
+/* ============================================================
+   Samy & Yasmine — vintage floral invitation
+   Change the palette and fonts here.
+   ============================================================ */
+:root {
+  --burgundy: #6a1425;
+  --wine: #4a0d1a;
+  --ivory: #f7f0e3;
+  --cream: #ede1c9;
+  --rose: #c58a8f;
+  --blush: #ecd3cf;
+  --gold: #b99a5b;
+  --sage: #8a9a72;
+
+  --font-serif: "Cormorant Garamond", "Cormorant", Georgia, "Times New Roman", serif;
+  --font-script: "Great Vibes", "Pinyon Script", "Snell Roundhand", cursive;
+  --font-sans: "Montserrat", "Helvetica Neue", Arial, sans-serif;
+
+  --paper: url("../assets/img/paper.svg");
+  --garden: url("../assets/img/garden.jpg");
+  --column: 520px;
+}
+
+*, *::before, *::after { box-sizing: border-box; margin: 0; }
+html { -webkit-text-size-adjust: 100%; }
+html.is-locked, html.is-locked body { overflow: hidden; height: 100%; }
+body {
+  font-family: var(--font-serif);
+  color: var(--burgundy);
+  background: var(--cream);
+  -webkit-font-smoothing: antialiased;
+  text-rendering: optimizeLegibility;
+}
+/* On wide screens the column sits on a softly blurred copy of the garden */
+body::before {
+  content: ""; position: fixed; inset: -40px; z-index: -1;
+  background: linear-gradient(rgba(247,240,227,.72), rgba(247,240,227,.72)), var(--garden) center / cover;
+  filter: blur(22px);
+}
+img { display: block; max-width: 100%; }
+:focus-visible { outline: 2px solid var(--gold); outline-offset: 4px; }
+
+/* ---------- Opening ---------- */
+.opening {
+  position: fixed; inset: 0; z-index: 100;
+  display: flex; flex-direction: column; align-items: center; justify-content: center; gap: 2.2rem;
+  background: var(--paper), radial-gradient(ellipse at 50% 40%, #f8f1e2 0%, #eadcc0 100%);
+  overflow: hidden;
+}
+.opening__above {
+  font-style: italic; font-size: clamp(1.05rem, 4.2vw, 1.3rem); letter-spacing: .06em; color: var(--burgundy); opacity: .8;
+}
+.opening__tap {
+  font-family: var(--font-sans); font-weight: 300; font-size: .78rem; letter-spacing: .42em;
+  text-indent: .42em; color: var(--burgundy); text-transform: none;
+  animation: breathe 3.2s ease-in-out infinite;
+}
+@keyframes breathe { 50% { opacity: .45; } }
+
+.sprig {
+  --w: clamp(90px, 26vw, 160px); --d: calc((var(--w) * 220 / 120 - var(--w)) / 2);
+  position: absolute; width: var(--w); height: calc(var(--w) * 220 / 120); opacity: .75; pointer-events: none;
+}
+.sprig--tl { left: var(--d); top: calc(-1 * var(--d)); transform: rotate(90deg); }
+.sprig--tr { right: 0; top: 0; transform: rotate(180deg); }
+.sprig--bl { left: 0; bottom: 0; }
+.sprig--br { right: var(--d); bottom: calc(-1 * var(--d)); transform: rotate(-90deg); }
+
+/* Envelope (width 100 : height 69) */
+.env {
+  position: relative; width: min(86vw, 430px); aspect-ratio: 145 / 100; perspective: 1400px;
+}
+.env__shadow {
+  position: absolute; left: 6%; right: 6%; bottom: -7%; height: 14%;
+  background: radial-gradient(ellipse at center, rgba(74,13,26,.38), transparent 70%); filter: blur(8px);
+}
+.env__back { position: absolute; inset: 0; border-radius: 3px; background: var(--paper), linear-gradient(160deg, #e9dabd, #dac7a2); box-shadow: inset 0 0 0 1px rgba(110,70,45,.2); }
+.env__pocket { position: absolute; inset: 0; width: 100%; height: 100%; z-index: 3; filter: drop-shadow(0 -1px 2px rgba(74,13,26,.15)); }
+.flap { position: absolute; left: 0; top: 0; width: 100%; height: 60%; z-index: 4; transform-origin: 50% 0; transform-style: preserve-3d; }
+.flap__face { position: absolute; inset: 0; width: 100%; height: 100%; backface-visibility: hidden; -webkit-backface-visibility: hidden; filter: drop-shadow(0 3px 3px rgba(74,13,26,.22)); }
+.flap__face--in { transform: rotateX(180deg); filter: none; }
+
+.letter {
+  position: absolute; left: 9%; top: 8%; width: 82%; height: 84%; z-index: 2; overflow: hidden;
+  background: var(--paper), #fbf6ea; box-shadow: 0 1px 6px rgba(74,13,26,.25), inset 0 0 0 1px rgba(185,154,91,.5);
+}
+.letter::after { content: ""; position: absolute; inset: 6px; border: 1px solid rgba(185,154,91,.55); pointer-events: none; }
+.letter__photo { position: absolute; inset: 0; background: var(--garden) center / cover; opacity: 0; }
+.letter__copy { position: absolute; inset: 0; display: grid; place-content: center; text-align: center; gap: .3rem; }
+.letter__names { font-family: var(--font-script); font-size: clamp(1.4rem, 6.5vw, 2rem); color: var(--burgundy); }
+.letter__date { font-family: var(--font-sans); font-weight: 300; font-size: .62rem; letter-spacing: .3em; color: var(--burgundy); opacity: .8; }
+
+.seal {
+  position: absolute; left: 50%; top: 60%; width: 20%; aspect-ratio: 640 / 789; translate: -50% -50%; z-index: 6;
+  background: none; border: 0; padding: 0; cursor: pointer; -webkit-tap-highlight-color: transparent;
+  filter: drop-shadow(0 6px 7px rgba(40,6,14,.5));
+}
+.seal::after { /* quiet invitation ring */
+  content: ""; position: absolute; inset: -8%; border-radius: 50%; border: 1px solid var(--gold); opacity: 0; animation: ring 2.8s ease-out infinite; pointer-events: none;
+}
+@keyframes ring { 0% { transform: scale(.85); opacity: .7; } 100% { transform: scale(1.55); opacity: 0; } }
+.seal__full, .seal__half, .seal__half img { position: absolute; inset: 0; width: 100%; height: 100%; }
+.seal__half { visibility: hidden; }
+.seal__half--l { clip-path: polygon(0 0, 54% 0, 46% 20%, 57% 38%, 45% 60%, 55% 80%, 48% 100%, 0 100%); }
+.seal__half--r { clip-path: polygon(54% 0, 100% 0, 100% 100%, 48% 100%, 55% 80%, 45% 60%, 57% 38%, 46% 20%); }
+.seal.is-broken { pointer-events: none; }
+.seal.is-broken::after { display: none; }
+.seal.is-broken .seal__full { visibility: hidden; }
+.seal.is-broken .seal__half { visibility: visible; }
+
+/* ---------- Main ---------- */
+.main { visibility: hidden; opacity: 0; position: relative; max-width: var(--column); margin: 0 auto; box-shadow: 0 0 80px rgba(74,13,26,.28); background: var(--ivory); overflow: hidden; }
+
+.scene { position: relative; overflow: hidden; isolation: isolate; }
+.scene__bg { position: absolute; left: 0; right: 0; top: -8%; height: 116%; z-index: -2; background: var(--garden) center top / cover no-repeat; will-change: transform; }
+
+/* Hero */
+.hero { min-height: 100vh; min-height: 100svh; display: flex; flex-direction: column; align-items: center; }
+.hero__glow { position: absolute; inset: 0; z-index: -1; background: radial-gradient(ellipse 62% 34% at 50% 35%, rgba(250,244,230,.82), rgba(250,244,230,0) 100%); }
+.hero__content { margin-top: clamp(6.5rem, 21svh, 12rem); text-align: center; padding: 0 1.5rem; display: flex; flex-direction: column; align-items: center; }
+.hero__intro { font-style: italic; font-size: clamp(1.1rem, 4.6vw, 1.4rem); letter-spacing: .04em; margin-bottom: .6rem; }
+.names { font-weight: 400; display: flex; flex-direction: column; align-items: center; line-height: .95; }
+.name { font-family: var(--font-script); font-size: clamp(4.4rem, 22vw, 6.6rem); padding: .12em .22em .22em; color: var(--burgundy); text-shadow: 0 1px 0 rgba(255,250,240,.7); }
+.name--b { margin-top: -.12em; }
+.amp { font-family: var(--font-serif); font-style: italic; font-size: clamp(1.6rem, 7vw, 2.2rem); color: var(--gold); margin: -.3rem 0 -.2rem; }
+.hero__announce { font-family: var(--font-sans); font-weight: 300; font-size: clamp(.68rem, 2.6vw, .8rem); letter-spacing: .38em; text-indent: .38em; margin-top: 1.1rem; }
+.hero__date { display: flex; align-items: center; gap: 1rem; margin-top: 1.1rem; font-size: clamp(1.5rem, 6.5vw, 2rem); letter-spacing: .14em; font-weight: 500; }
+.rule { display: block; width: clamp(30px, 11vw, 54px); height: 1px; background: var(--gold); transform-origin: center; }
+.hero__scroll { position: absolute; left: 50%; bottom: 15svh; width: 1px; height: 54px; background: rgba(106,20,37,.18); overflow: hidden; }
+.hero__scroll span { display: block; width: 100%; height: 40%; background: var(--burgundy); animation: drip 2.2s ease-in-out infinite; }
+@keyframes drip { 0% { transform: translateY(-100%); } 100% { transform: translateY(260%); } }
+
+/* Venue */
+.venue { padding: clamp(5rem, 14svh, 8rem) 1.25rem; display: grid; place-items: center; min-height: 100svh; }
+.scene__bg--venue { background-position: center 88%; }
+.venue::before { content: ""; position: absolute; inset: 0; z-index: -1; background: linear-gradient(rgba(247,240,227,.9), rgba(247,240,227,.78) 40%, rgba(247,240,227,.9)); }
+.venue__card {
+  width: min(100%, 410px); padding: 12px; background: var(--paper), rgba(250,245,233,.94);
+  border-radius: 205px 205px 6px 6px; box-shadow: 0 18px 50px rgba(74,13,26,.22), 0 0 0 1px rgba(185,154,91,.6);
+}
+.venue__inner {
+  border: 1px solid var(--gold); border-radius: 195px 195px 3px 3px; padding: clamp(4.5rem, 20vw, 6.2rem) 1.4rem 2rem;
+  display: flex; flex-direction: column; align-items: center; text-align: center;
+}
+.venue__label { font-family: var(--font-sans); font-weight: 300; font-size: .74rem; letter-spacing: .42em; text-indent: .42em; }
+.venue__name { font-weight: 500; font-size: clamp(2.2rem, 10vw, 2.9rem); line-height: 1.05; margin: .7rem 0 .6rem; }
+.venue__address { font-style: italic; font-size: 1.1rem; line-height: 1.4; max-width: 28ch; color: #7b3a47; margin-bottom: 1.5rem; }
+.venue__address.is-placeholder { opacity: .6; font-size: .98rem; }
+
+.map { position: relative; display: block; width: 100%; aspect-ratio: 16 / 10; overflow: hidden; border-radius: 2px; box-shadow: 0 8px 22px rgba(74,13,26,.2); }
+.map__art, .map__live { position: absolute; inset: 0; width: 100%; height: 100%; }
+.map__live iframe { width: 100%; height: 100%; border: 0; pointer-events: none; filter: sepia(.55) saturate(.8) hue-rotate(-12deg) contrast(.95); }
+.map__frame { position: absolute; inset: 6px; border: 1px solid rgba(106,20,37,.55); box-shadow: inset 0 0 40px rgba(237,225,201,.7); pointer-events: none; }
+.map__pulse { transform-box: fill-box; transform-origin: center; animation: mapPulse 2.4s ease-out infinite; }
+@keyframes mapPulse { 0% { transform: scale(.5); opacity: .8; } 100% { transform: scale(2.4); opacity: 0; } }
+.map { transition: transform .5s cubic-bezier(.2,.7,.2,1), box-shadow .5s; }
+.map:hover { transform: translateY(-3px); box-shadow: 0 14px 30px rgba(74,13,26,.28); }
+
+.btn {
+  position: relative; margin-top: 1.5rem; display: inline-block; cursor: pointer; text-decoration: none;
+  font-family: var(--font-sans); font-weight: 300; font-size: .76rem; letter-spacing: .3em; text-indent: .3em;
+  color: var(--ivory); background: var(--burgundy); padding: 1rem 2.1rem; transition: background .4s, transform .4s;
+}
+.btn::after { content: ""; position: absolute; inset: 3px; border: 1px solid rgba(236,211,207,.55); pointer-events: none; }
+.btn:hover { background: var(--wine); transform: translateY(-2px); }
+
+/* Closing */
+.closing { min-height: 100svh; display: grid; place-items: center; padding: 6rem 1.8rem; color: var(--ivory); text-align: center; }
+.scene__bg--closing { background-position: center 70%; }
+.closing::before { content: ""; position: absolute; inset: 0; z-index: -1; background: linear-gradient(180deg, rgba(74,13,26,.94), rgba(106,20,37,.9) 55%, rgba(74,13,26,.95)); }
+.closing__content { display: flex; flex-direction: column; align-items: center; max-width: 30rem; }
+.closing__msg { font-style: italic; font-size: clamp(1.45rem, 6.4vw, 1.9rem); line-height: 1.45; color: var(--blush); max-width: 24ch; }
+.closing__love { font-family: var(--font-script); font-size: clamp(2rem, 9vw, 2.6rem); color: var(--gold); margin-top: 2.6rem; }
+.closing__names { font-family: var(--font-script); font-size: clamp(2.7rem, 12.5vw, 4rem); line-height: 1.2; color: var(--ivory); padding: 0 .2em; }
+.orn { width: min(260px, 70%); height: auto; aspect-ratio: 260/44; color: var(--gold); }
+.orn--top { margin-bottom: 2.4rem; }
+.orn--bottom { margin-top: 2rem; transform: scaleY(-1); }
+
+/* Petals */
+.petals { position: fixed; inset: 0; z-index: 50; pointer-events: none; overflow: hidden; }
+.petal { position: absolute; top: 0; border-radius: 100% 0 100% 0; opacity: 0; will-change: transform; }
+
+@media (prefers-reduced-motion: reduce) {
+  .opening__tap, .seal::after, .hero__scroll span, .map__pulse { animation: none; }
+  .petals { display: none; }
+}
